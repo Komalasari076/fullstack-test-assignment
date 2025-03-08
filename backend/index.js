@@ -1,16 +1,16 @@
 const express = require("express");
-const http = require("http");
-
 const app = express();
-const server = http.createServer(app);
+const port = 3001;
 
-const router = require("./src/routes");
+// menggunakan http.createServer
+const http = require("http");
+const server = http.createServer(app);
 
 app.use(express.json());
 
+const router = require("./src/routes");
 app.use("/api", router);
 
-const port = 3001;
 server.listen(process.env.PORT || port, () =>
   console.log(`server running at http://localhost:${port}`)
 );
