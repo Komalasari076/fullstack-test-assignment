@@ -105,6 +105,31 @@ exports.detailTrip = async (req, res) => {
 
 exports.addTrip = async (req, res) => {
   try {
+    const { title, description, image, price, country } = req.body;
+
+    if (!title || !description || !image || !price || !country) {
+      return res.status(400).json({
+        status: "failed",
+        massage: "Semua field harus diisi",
+      });
+    }
+
+    const newTrip = {
+      id: TRIPS.length + 1,
+      title,
+      description,
+      image,
+      price,
+      country,
+    };
+
+    TRIPS.push(newTrip);
+
+    res.status(201).json({
+      status: "success",
+      message: "Trip berhasil ditambahkan",
+      data: newTrip,
+    });
   } catch (error) {
     res.status(500).json({
       status: "failed",
