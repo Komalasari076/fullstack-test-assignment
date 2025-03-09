@@ -155,7 +155,7 @@ exports.editTrip = async (req, res) => {
 
     TRIPS[tripIndex] = {
       ...TRIPS[tripIndex],
-      title: title || TRIPS[tripIndex].title, 
+      title: title || TRIPS[tripIndex].title,
       description: description || TRIPS[tripIndex].description,
       image: image || TRIPS[tripIndex].image,
       price: price || TRIPS[tripIndex].price,
@@ -175,4 +175,31 @@ exports.editTrip = async (req, res) => {
   }
 };
 
-exports.deleteTrip = async (req, res) => {};
+exports.deleteTrip = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const tripIndex = TRIPS.findIndex((trip) => trip.id === parseInt(id));
+
+    // jika tidak ada
+    if (tripIndex === -1) {
+      return res.status(404).json({
+        status: "failed",
+        message: `Trip dengan id ${id} tidak ditemukan`,
+      });
+    }
+
+    const deleteTrip = TRIPS[tripIndex];
+    TRIPS.splice(tripIndex, 1);
+
+    res.status(200).json({
+      status: "success",
+      message: `Trip dengan id ${id} berhasil dihapus`,
+      data: deleteTrip,
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "failed",
+      message: "Internal Server error",
+    });
+  }
+};
