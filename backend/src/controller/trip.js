@@ -137,3 +137,42 @@ exports.addTrip = async (req, res) => {
     });
   }
 };
+
+exports.editTrip = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, description, image, price, country } = req.body;
+
+    const tripIndex = TRIPS.findIndex((trip) => trip.id === parseInt(id));
+
+    // jika tidak ada
+    if (tripIndex === -1) {
+      return res.status(404).json({
+        status: "failed",
+        message: `Trip dengan id ${id} tidak ditemukan`,
+      });
+    }
+
+    TRIPS[tripIndex] = {
+      ...TRIPS[tripIndex],
+      title: title || TRIPS[tripIndex].title, 
+      description: description || TRIPS[tripIndex].description,
+      image: image || TRIPS[tripIndex].image,
+      price: price || TRIPS[tripIndex].price,
+      country: country || TRIPS[tripIndex].country,
+    };
+
+    res.status(200).json({
+      status: "success",
+      message: `Trip dengan id ${id} berhasil diperbarui`,
+      data: TRIPS[tripIndex],
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "failed",
+      message: "Internal Server error",
+    });
+  }
+};
+
+exports.deleteTrip = async (req, res) => {};
