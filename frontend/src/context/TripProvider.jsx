@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import axios from "axios ";
+import axios from "axios";
 
 const TripContext = createContext();
 
-const URL = "http://localhost:3001/trips";
+const URL = "http://localhost:3001/api/trips";
 
 export const TripProvider = ({ children }) => {
   const [trips, setTrips] = useState([]);
@@ -17,18 +17,19 @@ export const TripProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.get(URL);
-      setTrips([...trips, response.data]);
+      setTrips(response.data.data);
     } catch (error) {
       console.error("error get data", error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const addTrip = async (trip) => {
     try {
       const response = await axios.post(URL, trip);
-      setTrips([...trips, response.data]);
-    } catch {
+      setTrips((prevTrips) => [...prevTrips, response.data]);
+    } catch (error) {
       console.error("error add data", error);
     }
   };
@@ -36,7 +37,9 @@ export const TripProvider = ({ children }) => {
   const editTrip = async (id, updateTrip) => {
     try {
       const response = await axios.put(`${URL}/${id}`, updateTrip);
-      setTrips(trips.map((trip) => (trip.id === id ? response.data : trip)));
+      setTrips((prevTrips) =>
+        prevTrips.map((trip) => (trip.id === id ? response.data : trip))
+      );
     } catch (error) {
       console.error("error update data", error);
     }
@@ -60,5 +63,4 @@ export const TripProvider = ({ children }) => {
   );
 };
 
-// costum hook
 export const useTrip = () => useContext(TripContext);
