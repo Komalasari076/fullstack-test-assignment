@@ -1,5 +1,6 @@
 import React from "react";
 import { useTrip } from "../../context/TripProvider";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { trips, loading, addTrip, deleteTrip } = useTrip();
@@ -8,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="bg-gray-100">
-      <div className="container mx-auto py-10">
+      <div className="container mx-auto py-16">
         <div className="flex justify-between mb-10">
           <h1 className="text-2xl font-bold">Income Trip</h1>
           <button className="bg-yellow-600 rounded-md p-2 px-6 font-semibold text-white">
@@ -34,11 +35,11 @@ const Home = () => {
               {/* Content Section */}
               <div className="mt-3">
                 <h3 className="text-md font-semibold text-gray-900 cursor-pointer">
-                  {trip.title}
+                  <Link to={`/detail-trip/${trip.id}`}>{trip.title}</Link>
                 </h3>
                 <div className="flex justify-between mt-2">
                   <p className="text-yellow-500 font-bold text-sm mt-1">
-                    {trip.price}
+                    {trip.price.toLocaleString()}
                   </p>
                   <p className="text-gray-500 text-xs mt-1">{trip.country}</p>
                 </div>
