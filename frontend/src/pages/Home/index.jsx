@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const { trips, loading } = useTrip();
+  console.log(trips);
 
   if (loading) return <h1>Loading...</h1>;
 
@@ -29,6 +30,9 @@ const Home = () => {
                 />
                 <span className="absolute top-2 right-2 bg-white text-xs font-semibold px-2 py-1 rounded-md shadow">
                   12/15
+                </span>
+                <span className="absolute top-2 right-16 bg-white text-xs font-semibold px-2 py-1 rounded-md shadow">
+                  <Link to={`/edit-trip/${trip.id}`}>edit</Link>
                 </span>
               </div>
 
