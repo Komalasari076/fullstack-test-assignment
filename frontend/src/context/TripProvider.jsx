@@ -40,7 +40,7 @@ export const TripProvider = ({ children }) => {
       setTrips((prevTrips) =>
         prevTrips.map((trip) => (trip.id === id ? response.data : trip))
       );
-      getTrips()
+      getTrips();
     } catch (error) {
       console.error("error update data", error);
     }

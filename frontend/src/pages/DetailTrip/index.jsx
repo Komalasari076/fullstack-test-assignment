@@ -24,44 +24,46 @@ export default function DetailTrip() {
 
   return (
     <div className="bg-gray-100">
-      <div className="container mx-auto py-16 px-5 lg:px-20">
+      <div className="max-w-9/10 mx-auto py-12 px-5 lg:px-20">
         <h1 className="text-3xl font-bold">{trip.title}</h1>
         <p className="text-gray-500 text-lg">{trip.country}</p>
 
         <img
           src={trip.image}
           alt={trip.title}
-          className="bg-white w-full h-96 object-cover rounded-lg my-6"
+          className="bg-white w-full h-96 object-cover rounded-lg mt-6 mb-12"
         />
 
-        <div className="flex justify-between mb-6">
-          <div className="text-center">
-            <p className="font-semibold">Accommodation</p>
-            <p className="text-gray-500">Hotel 4 Nights</p>
+        <div className="flex justify-between mb-12">
+          <div>
+            <p className="text-gray-500 text-sm ">Accommodation</p>
+            <p className="font-semibold">Hotel 4 Nights</p>
           </div>
-          <div className="text-center">
-            <p className="font-semibold">Transportation</p>
-            <p className="text-gray-500">Qatar Airways</p>
+          <div>
+            <p className="text-gray-500 text-sm">Transportation</p>
+            <p className="font-semibold">Qatar Airways</p>
           </div>
-          <div className="text-center">
-            <p className="font-semibold">Meal</p>
-            <p className="text-gray-500">Included as Itinerary</p>
+          <div>
+            <p className="text-gray-500 text-sm">Meal</p>
+            <p className="font-semibold">Included as Itinerary</p>
           </div>
-          <div className="text-center">
-            <p className="font-semibold">Duration</p>
-            <p className="text-gray-500">{trip.duration}</p>
+          <div>
+            <p className="text-gray-500 text-sm">Duration</p>
+            <p className="font-semibold">4 Day 4 Ninght</p>
           </div>
-          <div className="text-center">
-            <p className="font-semibold">Date Trip</p>
-            <p className="text-gray-500">{trip.date}</p>
+          <div>
+            <p className="text-gray-500 text-sm">Date Trip</p>
+            <p className="font-semibold">26 Agust 2024</p>
           </div>
         </div>
 
-        <h2 className="text-xl font-bold mt-6">Description</h2>
-        <p className="text-gray-600 leading-relaxed">{trip.description}</p>
+        <div className="mb-12">
+          <h2 className="text-lg font-semibold mb-2">Description</h2>
+          <p className="text-gray-600 leading-relaxed">{trip.description}{trip.description}</p>
+        </div>
 
-        <p className="text-orange-500 font-bold text-2xl mt-4">
-          IDR {trip.price.toLocaleString()} / Person
+        <p className="font-bold text-2xl mt-4">
+          <span className="text-amber-500">IDR {trip.price.toLocaleString()}</span> / Person
         </p>
 
         <button
