@@ -3,7 +3,7 @@ import { useTrip } from "../../context/TripProvider";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { trips, loading, addTrip, deleteTrip } = useTrip();
+  const { trips, loading } = useTrip();
 
   if (loading) return <h1>Loading...</h1>;
 
@@ -13,7 +13,7 @@ const Home = () => {
         <div className="flex justify-between mb-10">
           <h1 className="text-2xl font-bold">Income Trip</h1>
           <button className="bg-yellow-600 rounded-md p-2 px-6 font-semibold text-white">
-            Add Trip
+            <Link to={"/add-trip"}>Add Trip</Link>
           </button>
         </div>
 
@@ -39,7 +39,7 @@ const Home = () => {
                 </h3>
                 <div className="flex justify-between mt-2">
                   <p className="text-yellow-500 font-bold text-sm mt-1">
-                    {trip.price.toLocaleString()}
+                    {trip.price ? trip.price.toLocaleString() : ""}
                   </p>
                   <p className="text-gray-500 text-xs mt-1">{trip.country}</p>
                 </div>

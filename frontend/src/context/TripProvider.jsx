@@ -28,7 +28,7 @@ export const TripProvider = ({ children }) => {
   const addTrip = async (trip) => {
     try {
       const response = await axios.post(URL, trip);
-      setTrips((prevTrips) => [...prevTrips, response.data]);
+      setTrips((prevTrips) => [...prevTrips, response.data.data]);
     } catch (error) {
       console.error("error add data", error);
     }
