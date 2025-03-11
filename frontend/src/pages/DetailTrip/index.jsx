@@ -1,15 +1,25 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useTrip } from "../../context/TripProvider";
 
 export default function DetailTrip() {
   const { id } = useParams();
-  const { trips } = useTrip();
+  const { trips, deleteTrip } = useTrip();
+  const navigate = useNavigate();
 
   const trip = trips.find((trip) => trip.id === parseInt(id));
   console.log(trip);
 
   if (!trip) {
     return <h1>Trip tidak di temukan</h1>;
+  }
+
+  function handledeleteTrip(id) {
+    const confirm = window.confirm("Yakin mau hapus");
+
+    if (confirm) {
+      deleteTrip(id);
+      navigate("/");
+    }
   }
 
   return (
@@ -54,7 +64,10 @@ export default function DetailTrip() {
           IDR {trip.price.toLocaleString()} / Person
         </p>
 
-        <button className="mt-6 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg">
+        <button
+          onClick={() => handledeleteTrip(trip.id)}
+          className="mt-6 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg cursor-pointer"
+        >
           Delete Trip
         </button>
       </div>
