@@ -23,7 +23,27 @@ const AddTrip = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (
+      !formData.title ||
+      !formData.country ||
+      !formData.accommodation ||
+      !formData.transportation ||
+      !formData.eat ||
+      !formData.durationDay ||
+      !formData.durationNight ||
+      !formData.date ||
+      !formData.price ||
+      !formData.quota ||
+      !formData.description ||
+      !formData.image
+    ) {
+      alert("Please make sure all fields are filled in");
+      return
+    }
+
     await addTrip(formData);
+    console.log(formData);
     navigate("/");
   };
 
@@ -53,10 +73,13 @@ const AddTrip = () => {
               onChange={(e) => setFormData({ ...formData, country: e.target.value })}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             >
-              <option value=""></option>
-              <option value="indonesia">Indonesia</option>
-              <option value="japan">Japan</option>
-              <option value="usa">USA</option>
+              <option value="">Select Country</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Japan">Japan</option>
+              <option value="UAE">UAE</option>
+              <option value="France">France</option>
+              <option value="Australia">Australia</option>
+              <option value="Switzerland">Switzerland</option>
             </select>
           </div>
 
@@ -143,7 +166,7 @@ const AddTrip = () => {
           <div>
             <label className="block text-md font-medium mb-2">Price</label>
             <input
-              type="number"
+              type="text"
               name="price"
               value={formData.price}
               onChange={(e) =>
@@ -157,7 +180,7 @@ const AddTrip = () => {
           <div>
             <label className="block text-md font-medium mb-2">Quota</label>
             <input
-              type="number"
+              type="text"
               name="quota"
               value={formData.quota}
               onChange={(e) => setFormData({...formData, quota : e.target.value})}

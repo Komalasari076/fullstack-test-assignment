@@ -27,7 +27,12 @@ export default function EditTrip() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await editTrip(id, updateFormData);
+    
+    const confirm = window.confirm("Are you sure you want to update this trip?")
+    if (confirm) {
+      await editTrip(id, updateFormData);
+    }
+
     navigate("/");
   };
 
@@ -58,12 +63,13 @@ export default function EditTrip() {
               onChange={(e) => setUpdateFormData({...updateFormData, country: e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             >
-              <option value="indonesia">Indonesia</option>
-              <option value="japan">Japan</option>
-              <option value="uae">UAE</option>
-              <option value="france">France</option>
-              <option value="australia">Australia</option>
-              <option value="switzerland">Switzerland</option>
+              <option value="">Select Country</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Japan">Japan</option>
+              <option value="UAE">UAE</option>
+              <option value="France">France</option>
+              <option value="Australia">Australia</option>
+              <option value="Switzerland">Switzerland</option>
             </select>
           </div>
 
@@ -156,7 +162,7 @@ export default function EditTrip() {
           <div>
             <label className="block text-md font-medium mb-2">Price</label>
             <input
-              type="number"
+              type="text"
               name="price"
               placeholder={trip.price}
               value={updateFormData.price}

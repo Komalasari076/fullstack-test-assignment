@@ -1,6 +1,7 @@
 import React from "react";
 import { useTrip } from "../../context/TripProvider";
 import { Link } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Home = () => {
   const { trips, loading } = useTrip();
@@ -12,13 +13,13 @@ const Home = () => {
       <div className="max-w-9/10 mx-auto py-12">
         <header className="flex justify-between mb-10">
           <h1 className="text-3xl font-bold">Income Trip</h1>
-          <Link to={"/add-trip"}><button className="bg-amber-500 rounded-md p-2 px-6 font-semibold text-white cursor-pointer">Add Trip</button></Link>
+          <Link to={"/add-trip"}><button className="bg-amber-500 rounded-md p-2 px-6 font-semibold text-white cursor-pointer transition-transform duration-300 hover:scale-94">Add Trip</button></Link>
         </header>
 
         <main className="grid grid-cols-3 gap-10">
           {trips.map((trip) => (
             <Link to={`/detail-trip/${trip.id}`}>
-              <div key={trip.id} className="bg-white rounded-xl shadow-lg p-3">
+              <div key={trip.id} className="bg-white rounded-xl shadow-lg p-3 transition-transform duration-300 hover:scale-96">
                 {/* Image Section */}
                 <div className="relative">
                   <img
@@ -29,7 +30,7 @@ const Home = () => {
                   />
                   <span className="absolute top-2 right-2 bg-white text-xs font-semibold px-2 py-1 rounded-md shadow">{trip.quota}</span>
                   <span className="absolute top-2 right-16 bg-white text-xs font-semibold px-2 py-1 rounded-md shadow hover:text-amber-600">
-                    <Link to={`/edit-trip/${trip.id}`}>Edit</Link>
+                    <Link to={`/edit-trip/${trip.id}`}><i class="fa-solid fa-pen"></i></Link>
                   </span>
                 </div>
 

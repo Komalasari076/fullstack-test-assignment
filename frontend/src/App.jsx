@@ -6,14 +6,12 @@ import EditTrip from "./pages/EditTrip";
 
 const App = () => {
   return (
-    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add-trip" element={<AddTrip />} />
         <Route path="/detail-trip/:id" element={<DetailTrip />} />
         <Route path="/edit-trip/:id" element={<EditTrip />} />
       </Routes>
-    </>
   );
 };
 

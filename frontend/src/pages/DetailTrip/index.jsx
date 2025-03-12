@@ -15,7 +15,7 @@ export default function DetailTrip() {
   }
 
   function handledeleteTrip(id) {
-    const confirm = window.confirm("Yakin mau hapus");
+    const confirm = window.confirm("Are you sure you want to delete this trip?");
 
     if (confirm) {
       deleteTrip(id);
