@@ -8,10 +8,17 @@ const AddTrip = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
+    country: "",
+    accommodation: "",
+    transportation: "",
+    eat: "",
+    durationDay: "",
+    durationNight: "",
+    date: "",
+    price: "",
+    quota: "",
     description: "",
     image: "",
-    price: "",
-    country: "",
   });
 
   const handleSubmit = async (e) => {
@@ -62,7 +69,7 @@ const AddTrip = () => {
               type="text"
               name="accommodation"
               value={formData.accommodation}
-              // onChange={(e) => setFormData({...formData, name : e.target.value})}
+              onChange={(e) => setFormData({...formData, accommodation : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -76,7 +83,7 @@ const AddTrip = () => {
               type="text"
               name="transportation"
               value={formData.transportation}
-              // onChange={(e) => setFormData({...formData, name : e.target.value})}
+              onChange={(e) => setFormData({...formData, transportation : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -88,7 +95,7 @@ const AddTrip = () => {
               type="text"
               name="eat"
               value={formData.eat}
-              // onChange={(e) => setFormData({...formData, name : e.target.value})}
+              onChange={(e) => setFormData({...formData, eat : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -102,7 +109,7 @@ const AddTrip = () => {
                   type="number"
                   name="durationDay"
                   value={formData.durationDay}
-                  // onChange={(e) => setFormData({...formData, name : e.target.value})}
+                  onChange={(e) => setFormData({...formData, durationDay : Number(e.target.value)})}
                   className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
                 />
                 <label className="block text-md font-medium mb-2">Day</label>
@@ -112,7 +119,7 @@ const AddTrip = () => {
                   type="number"
                   name="durationNight"
                   value={formData.durationNight}
-                  // onChange={(e) => setFormData({...formData, name : e.target.value})}
+                  onChange={(e) => setFormData({...formData, durationNight : Number(e.target.value)})}
                   className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
                 />
                 <label className="block text-md font-medium mb-2">Night</label>
@@ -127,7 +134,7 @@ const AddTrip = () => {
               type="date"
               name="date"
               value={formData.date}
-              // onChange={(e) => setFormData({...formData, name : e.target.value})}
+              onChange={(e) => setFormData({...formData, date : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -153,7 +160,7 @@ const AddTrip = () => {
               type="number"
               name="quota"
               value={formData.quota}
-              // onChange={(e) => setFormData({...formData, name : e.target.value})}
+              onChange={(e) => setFormData({...formData, quota : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>

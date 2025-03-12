@@ -9,10 +9,17 @@ export default function EditTrip() {
   const navigate = useNavigate();
   const [updateFormData, setUpdateFormData] = useState({
     title: "",
+    country: "",
+    accommodation: "",
+    transportation: "",
+    eat: "",
+    durationDay: "",
+    durationNight: "",
+    date: "",
+    price: "",
+    quota: "",
     description: "",
     image: "",
-    price: "",
-    country: "",
   });
 
   const trip = trips.find((trip) => trip.id === parseInt(id));
@@ -27,7 +34,7 @@ export default function EditTrip() {
   return (
     <div className="bg-gray-100">
       <div className="max-w-9/10 mx-auto py-12 px-5 lg:px-48">
-        <h2 className="text-2xl font-semibold mb-6">Add Trip</h2>
+        <h2 className="text-2xl font-semibold mb-6">Edit Trip</h2>
         <form onSubmit={handleSubmit} className="grid gap-6">
           {/* Title */}
           <div>
@@ -47,15 +54,16 @@ export default function EditTrip() {
             <label className="block text-md font-medium mb-2">Country</label>
             <select
               name="country"
-              placeholder={trip.country}
               value={updateFormData.country}
               onChange={(e) => setUpdateFormData({...updateFormData, country: e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             >
-              <option value=""></option>
               <option value="indonesia">Indonesia</option>
               <option value="japan">Japan</option>
-              <option value="usa">USA</option>
+              <option value="uae">UAE</option>
+              <option value="france">France</option>
+              <option value="australia">Australia</option>
+              <option value="switzerland">Switzerland</option>
             </select>
           </div>
 
@@ -67,8 +75,9 @@ export default function EditTrip() {
             <input
               type="text"
               name="accommodation"
+              placeholder={trip.accommodation}
               value={updateFormData.accommodation}
-              // onChange={(e) => setUpdateFormData({...updateFormData, name : e.target.value})}
+              onChange={(e) => setUpdateFormData({...updateFormData, accommodation : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -81,8 +90,9 @@ export default function EditTrip() {
             <input
               type="text"
               name="transportation"
+              placeholder={trip.transportation}
               value={updateFormData.transportation}
-              // onChange={(e) => setUpdateFormData({...updateFormData, name : e.target.value})}
+              onChange={(e) => setUpdateFormData({...updateFormData, transportation : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -93,8 +103,9 @@ export default function EditTrip() {
             <input
               type="text"
               name="eat"
+              placeholder={trip.eat}
               value={updateFormData.eat}
-              // onChange={(e) => setUpdateFormData({...updateFormData, name : e.target.value})}
+              onChange={(e) => setUpdateFormData({...updateFormData, eat : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -107,8 +118,9 @@ export default function EditTrip() {
                 <input
                   type="number"
                   name="durationDay"
+                  placeholder={trip.durationDay}
                   value={updateFormData.durationDay}
-                  // onChange={(e) => setUpdateFormData({...updateFormData, name : e.target.value})}
+                  onChange={(e) => setUpdateFormData({...updateFormData, durationDay : Number(e.target.value)})}
                   className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
                 />
                 <label className="block text-md font-medium mb-2">Day</label>
@@ -117,8 +129,9 @@ export default function EditTrip() {
                 <input
                   type="number"
                   name="durationNight"
+                  placeholder={trip.durationNight}
                   value={updateFormData.durationNight}
-                  // onChange={(e) => setUpdateFormData({...updateFormData, name : e.target.value})}
+                  onChange={(e) => setUpdateFormData({...updateFormData, durationNight : Number(e.target.value)})}
                   className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
                 />
                 <label className="block text-md font-medium mb-2">Night</label>
@@ -132,8 +145,9 @@ export default function EditTrip() {
             <input
               type="date"
               name="date"
+              placeholder={trip.date}
               value={updateFormData.date}
-              // onChange={(e) => setUpdateFormData({...updateFormData, name : e.target.value})}
+              onChange={(e) => setUpdateFormData({...updateFormData, date : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
@@ -157,8 +171,9 @@ export default function EditTrip() {
             <input
               type="number"
               name="quota"
+              placeholder={trip.quota}
               value={updateFormData.quota}
-              // onChange={(e) => setUpdateFormData({...updateFormData, name : e.target.value})}
+              onChange={(e) => setUpdateFormData({...updateFormData, quota : e.target.value})}
               className="w-full p-2 border border-gray-400 rounded-md bg-gray-200 text-sm focus:outline-none focus:ring-0 focus:border-gray-500"
             />
           </div>
