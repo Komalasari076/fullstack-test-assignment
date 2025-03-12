@@ -3,62 +3,104 @@ const TRIPS = [
   {
     id: 1,
     title: "6D/4N Fun Tassie Vacation + Sydney",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image:
-      "https://res.cloudinary.com/dmegegwqb/image/upload/v1638670749/trip-default-dewetour/sydney_p4d1w2.jpg",
-    price: 12000000,
     country: "Australia",
+    accommodation: "Hotel 4 Stars",
+    transportation: "Qantas Airways",
+    eat: "Included",
+    durationDay: 6,
+    durationNight: 4,
+    date: "2025-06-15",
+    price: 12000000,
+    quota: "18/20",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+    image:
+      "https://tse1.mm.bing.net/th?id=OIP.x-OIRj6seBewJoR-v-nK1wHaE7&pid=Api",
   },
   {
     id: 2,
     title: "5D/4N Amazing Japan Adventure",
-    description:
-      "Explore the vibrant city of Tokyo, the historical beauty of Kyoto, and the delicious local cuisine of Osaka.",
-    image:
-      "https://res.cloudinary.com/dmegegwqb/image/upload/v1638670749/trip-default-dewetour/japan.jpg",
-    price: 15000000,
     country: "Japan",
+    accommodation: "Hotel 5 Stars",
+    transportation: "Japan Airlines",
+    eat: "Included",
+    durationDay: 5,
+    durationNight: 4,
+    date: "2025-07-10",
+    price: 15000000,
+    quota: "10/15",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+    image:
+      "https://tse2.mm.bing.net/th?id=OIP.YSQLs8xIiG-DS9Tc-_uqaAHaE8&pid=Api",
   },
   {
     id: 3,
     title: "4D/3N Romantic Paris Getaway",
-    description:
-      "Visit the Eiffel Tower, enjoy authentic French pastries, and stroll through the streets of Paris.",
-    image:
-      "https://res.cloudinary.com/dmegegwqb/image/upload/v1638670749/trip-default-dewetour/paris.jpg",
-    price: 17000000,
     country: "France",
+    accommodation: "Hotel 5 Stars",
+    transportation: "Air France",
+    eat: "Included",
+    durationDay: 4,
+    durationNight: 3,
+    date: "2025-08-05",
+    price: 17000000,
+    quota: "8/10",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+    image:
+      "https://tse2.mm.bing.net/th?id=OIP.jq-7CHhNCoib0sAhjFXUlQHaE8&pid=Api",
   },
   {
     id: 4,
     title: "7D/6N Breathtaking Swiss Alps",
-    description:
-      "Experience the stunning beauty of the Swiss Alps, take scenic train rides, and enjoy local Swiss chocolates.",
-    image:
-      "https://res.cloudinary.com/dmegegwqb/image/upload/v1638670749/trip-default-dewetour/swiss.jpg",
-    price: 20000000,
     country: "Switzerland",
+    accommodation: "Luxury Resort",
+    transportation: "Swiss International Air Lines",
+    eat: "Included",
+    durationDay: 7,
+    durationNight: 6,
+    date: "2025-09-20",
+    price: 20000000,
+    quota: "10/12",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+    image:
+      "https://tse2.mm.bing.net/th?id=OIP.jq-7CHhNCoib0sAhjFXUlQHaE8&pid=Api",
   },
   {
     id: 5,
     title: "3D/2N Bali Relaxation Retreat",
-    description:
-      "Enjoy the serene beaches of Bali, indulge in spa treatments, and explore the rich Balinese culture.",
-    image:
-      "https://res.cloudinary.com/dmegegwqb/image/upload/v1638670749/trip-default-dewetour/bali.jpg",
-    price: 5000000,
     country: "Indonesia",
+    accommodation: "Beachfront Villa",
+    transportation: "Garuda Indonesia",
+    eat: "Included",
+    durationDay: 3,
+    durationNight: 2,
+    date: "2025-05-01",
+    price: 5000000,
+    quota: "20/25",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+    image:
+      "https://tse3.mm.bing.net/th?id=OIP.-ceHr06YG7obxqFaVfzvVwHaE8&pid=Api",
   },
   {
     id: 6,
     title: "5D/4N Dubai Luxury Experience",
-    description:
-      "Visit the tallest building in the world, go on a desert safari, and experience the luxury of Dubai.",
-    image:
-      "https://res.cloudinary.com/dmegegwqb/image/upload/v1638670749/trip-default-dewetour/dubai.jpg",
-    price: 25000000,
     country: "UAE",
+    accommodation: "Luxury Hotel",
+    transportation: "Emirates",
+    eat: "Included",
+    durationDay: 5,
+    durationNight: 4,
+    date: "2025-11-11",
+    price: 25000000,
+    quota: "2/8",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+    image:
+      "https://tse3.mm.bing.net/th?id=OIP.-ceHr06YG7obxqFaVfzvVwHaE8&pid=Api",
   },
 ];
 
@@ -105,12 +147,38 @@ exports.detailTrip = async (req, res) => {
 
 exports.addTrip = async (req, res) => {
   try {
-    const { title, description, image, price, country } = req.body;
+    const {
+      title,
+      country,
+      accommodation,
+      transportation,
+      eat,
+      durationDay,
+      durationNight,
+      date,
+      price,
+      quota,
+      description,
+      image,
+    } = req.body;
 
-    if (!title || !description || !image || !price || !country) {
+    if (
+      !title ||
+      !country ||
+      !accommodation ||
+      !transportation ||
+      !eat ||
+      !durationDay ||
+      !durationNight ||
+      !date ||
+      !price ||
+      !quota ||
+      !description ||
+      !image
+    ) {
       return res.status(400).json({
         status: "failed",
-        massage: "Semua field harus diisi",
+        message: "Semua field harus diisi",
       });
     }
 
@@ -141,7 +209,20 @@ exports.addTrip = async (req, res) => {
 exports.editTrip = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, image, price, country } = req.body;
+    const {
+      title,
+      country,
+      accommodation,
+      transportation,
+      eat,
+      durationDay,
+      durationNight,
+      date,
+      price,
+      quota,
+      description,
+      image,
+    } = req.body;
 
     const tripIndex = TRIPS.findIndex((trip) => trip.id === parseInt(id));
 
@@ -156,10 +237,17 @@ exports.editTrip = async (req, res) => {
     TRIPS[tripIndex] = {
       ...TRIPS[tripIndex],
       title: title || TRIPS[tripIndex].title,
+      country: country || TRIPS[tripIndex].country,
+      accommodation: accommodation || TRIPS[tripIndex].accommodation,
+      transportation: transportation || TRIPS[tripIndex].transportation,
+      eat: eat || TRIPS[tripIndex].eat,
+      durationDay: durationDay || TRIPS[tripIndex].durationDay,
+      durationNight: durationNight || TRIPS[tripIndex].durationNight,
+      date: date || TRIPS[tripIndex].date,
+      price: price || TRIPS[tripIndex].price,
+      quota: quota || TRIPS[tripIndex].quota,
       description: description || TRIPS[tripIndex].description,
       image: image || TRIPS[tripIndex].image,
-      price: price || TRIPS[tripIndex].price,
-      country: country || TRIPS[tripIndex].country,
     };
 
     res.status(200).json({
