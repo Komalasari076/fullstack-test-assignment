@@ -22,7 +22,7 @@ const TRIPS = [
     title: "7D/6N Breathtaking Swiss Alps",
     country: "Switzerland",
     accommodation: "Luxury Resort",
-    transportation: "Swiss International Air Lines",
+    transportation: "Swiss Air Lines",
     eat: "Included",
     durationDay: 7,
     durationNight: 6,
@@ -185,10 +185,17 @@ exports.addTrip = async (req, res) => {
     const newTrip = {
       id: TRIPS.length + 1,
       title,
+      country,
+      accommodation,
+      transportation,
+      eat,
+      durationDay,
+      durationNight,
+      date,
+      price,
+      quota,
       description,
       image,
-      price,
-      country,
     };
 
     TRIPS.push(newTrip);
