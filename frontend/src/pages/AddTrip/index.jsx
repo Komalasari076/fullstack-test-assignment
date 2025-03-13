@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useTrip } from "../../context/TripProvider";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer";
 
 const AddTrip = () => {
   const { addTrip } = useTrip({});
@@ -217,12 +218,14 @@ const AddTrip = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full mt-6 bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600"
+            className="w-full mt-6 bg-amber-500 text-white py-2 rounded-md hover:bg-amber-600"
           >
             Add Trip
           </button>
         </form>
       </div>
+
+      <Footer/>
     </div>
   );
 };

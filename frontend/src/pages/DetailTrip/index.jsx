@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useTrip } from "../../context/TripProvider";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Footer from "../Footer";
 
 export default function DetailTrip() {
   const { id } = useParams();
@@ -25,7 +26,7 @@ export default function DetailTrip() {
 
   return (
     <div className="bg-gray-100">
-      <div className="max-w-9/10 mx-auto py-12 px-5 lg:px-48">
+      <div className="max-w-9/10 mx-auto py-12 px-2 md:px-10 lg:px-48">
         <h1 className="text-3xl font-bold">{trip.title}</h1>
         <p className="text-gray-500 text-lg">{trip.country}</p>
 
@@ -35,7 +36,7 @@ export default function DetailTrip() {
           className="bg-white w-full h-96 object-cover rounded-lg mt-6 mb-12"
         />
 
-        <div className="flex justify-between mb-12">
+        <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-4 w-full mb-12">
           <div>
             <p className="text-gray-500 text-sm ">Accommodation</p>
             <p className="font-semibold"><i class="fa-solid fa-hotel"></i> {trip.accommodation}</p>
@@ -78,6 +79,8 @@ export default function DetailTrip() {
           Delete Trip
         </button>
       </div>
+
+      <Footer/>
     </div>
   );
 }

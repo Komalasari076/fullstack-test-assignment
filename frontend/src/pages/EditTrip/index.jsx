@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useTrip } from "../../context/TripProvider";
 import { useNavigate, useParams } from "react-router-dom";
+import Footer from "../Footer";
 
 export default function EditTrip() {
   const { id } = useParams();
@@ -215,12 +216,14 @@ export default function EditTrip() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-yellow-500 text-white py-2 mt-6 rounded-md hover:bg-yellow-600"
+            className="w-full bg-amber-500 text-white py-2 mt-6 rounded-md hover:bg-amber-600"
           >
             update Trip
           </button>
         </form>
       </div>
+
+      <Footer/>
     </div>
   );
 }
